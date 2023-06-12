@@ -1,0 +1,157 @@
+$bp-largest: 75em; // 1200px
+$bp-large: 68.75em; // 1100px 1100/16
+$bp-medium: 56.75em; // 900px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 600px
+
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-Grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 65rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0; // removes colour at the top at 1200px
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.overview__heading {
+  font-size: 2.25rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.5rem 3rem;
+  margin: 2rem 0 2rem 0;
+}
+
+.detail {
+  font-size: 1.4rem;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-Grey-light-1);
+  border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+}
+
+.description {
+  font-size: 1.8rem;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  flex: 0 0 60%; // no flex, no grow, flex-basis to take up 60% of available space
+  margin-right: 4.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+.planner {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+
+  label {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    border-radius: 9px;
+    border: none;
+    box-shadow: var(--shadow-light);
+  }
+}
+
+#trips-list {
+  max-width: 120rem;
+  margin: 1rem auto;
+  background-color: var(--color-Grey-light-2);
+  box-shadow: var(--shadow-dark);
+  padding: 4.5rem;
+  min-height: 65rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4.8rem;
+  row-gap: 6.4rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0; // removes colour at the top at 1200px
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
+}
+
+.trip-info {
+  box-shadow: 0 2.4rem 4.8rem rgb(0 0 0 / 8%);
+  border-radius: 11px;
+  overflow: hidden;
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 1rem;
+    font-size: 1.8rem;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__icon {
+    width: 90px;
+  }
+
+  &__city {
+    font-size: 2.4rem;
+    color: #333;
+    font-weight: 600;
+  }
+}
+
+.destinations {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.5rem 3rem;
+  margin: 2rem 0 2rem 0;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+      rel="stylesheet"
+    />
+
+    <title>Travel App</title>
+  </head>
+  <body>
+    <div class="container">
+      <main class="planner-view">
+        <div class="overview">
+          <h1 class="overview__heading">🌍 Travel App</h1>
+        </div>
+
+        <div class="detail">
+          <div class="description">
+            <p class="paragraph">
+              Developed as part of my Udacity Front End Nanodegree final
+              project, this travel app uses 3 different API's to gather the
+              current weather information for the location a user selects and
+              displays an image of the chosen city.
+            </p>
+            <p class="paragraph">
+              Use the form on the right hand side to select your desired city
+              and date of departure.
+            </p>
+          </div>
+
+          <div class="planner">
+            <form id="trip-form">
+              <label for="city-input">I am travelling to:</label>
+              <input type="text" id="city-input" name="city" required />
+              <div class="departure-date">
+                <label for="departure-date">Departing on: </label>
+                <input type="date" id="departureDate" />
+              </div>
+              <button type="submit">Add Trip</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="trips">
+          <h2 class="destinations">🧳 Destinations</h2>
+          <div id="trips-list"></div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>
