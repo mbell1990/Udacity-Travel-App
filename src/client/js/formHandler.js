@@ -119,7 +119,7 @@ function removeTrip(index) {
 
 // Function to save trip data to the server
 async function saveTripData(data) {
-  const response = await fetch("/trips", {
+  const response = await fetch("https://travel-app-i0fc.onrender.com/trips", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
