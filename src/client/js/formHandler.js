@@ -2,9 +2,11 @@
 
 // Usernamea and API Keys
 
-const geonamesUrl = "http://api.geonames.org/searchJSON?q=";
-const geonamesUsername = "matt.bell123";
+//const geonamesUrl = "http://api.geonames.org/searchJSON?q=";
+//const geonamesUsername = "matt.bell123";
 //const weatherbitUrl = "https://api.weatherbit.io/v2.0/current";
+const opencageUrl = "https://api.opencagedata.com/geocode/v1/json?q=";
+const opencageApiKey = "d481d398527c4be5a3d769bd15fb3880";
 const weatherbitUrl = "https://api.weatherbit.io/v2.0/forecast/daily";
 const weatherbitApiKey = "ab81d9346d8945a9a203eda14cacbaa4";
 const pixabayUrl = "https://pixabay.com/api/";
@@ -12,14 +14,23 @@ const pixabayApiKey = "31135970-406b562ad428e5ae275d760d0";
 
 let trips = [];
 
-// Function to get the latitude and longitude of a city using Geonames API
+// // Function to get the latitude and longitude of a city using Geonames API
+// async function getLatLong(city) {
+//   const response = await fetch(
+//     `${geonamesUrl}${city}&maxRows=1&username=${geonamesUsername}`
+//   );
+//   const data = await response.json();
+//   const lat = data.geonames[0].lat;
+//   const lng = data.geonames[0].lng;
+//   return { lat, lng };
+// }
+
+// Function to get the latitude and longitude of a city using OpenCage Geocoding API
 async function getLatLong(city) {
-  const response = await fetch(
-    `${geonamesUrl}${city}&maxRows=1&username=${geonamesUsername}`
-  );
+  const response = await fetch(`${opencageUrl}${city}&key=${opencageApiKey}`);
   const data = await response.json();
-  const lat = data.geonames[0].lat;
-  const lng = data.geonames[0].lng;
+  const lat = data.results[0].geometry.lat;
+  const lng = data.results[0].geometry.lng;
   return { lat, lng };
 }
 
