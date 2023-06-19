@@ -2,7 +2,7 @@
 
 // Usernamea and API Keys
 
-const geonamesUrl = "https://api.geonames.org/searchJSON?q=";
+const geonamesUrl = "http://api.geonames.org/searchJSON?q=";
 const geonamesUsername = "matt.bell123";
 //const weatherbitUrl = "https://api.weatherbit.io/v2.0/current";
 const weatherbitUrl = "https://api.weatherbit.io/v2.0/forecast/daily";
